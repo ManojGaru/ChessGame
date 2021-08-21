@@ -1,0 +1,48 @@
+<ion-content scroll="false" class="myview">
+  <ion-grid style="position: absolute;top: 0px;width: 100%;">
+
+    <ion-row style="top: 15px;">
+
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="6"></ion-col>
+      <ion-col size="2">
+        <ion-icon class="power" (click) = "logout()" name="power-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="6" *ngFor="let tournament of tournaments"  (click)="board(tournament)">
+        <ion-row>
+          <img class="img_txt" src="../../assets/image/logo2.png">
+        </ion-row>
+        <ion-card class="crd">
+          <p class="pp2">START: {{ tournament.startdate}},{{tournament.starttime}}</p>
+          <p class="pp22">END: {{ tournament.enddate}},{{tournament.endtime}}</p>
+          <p class="title">{{tournament.name}}</p>
+          <div class="button_start">PLAY</div>
+        </ion-card>
+      </ion-col>
+      <!-- <ion-col size="3"></ion-col>
+      <ion-col size="6" (click)="login()">
+        <ion-row>
+          <img class="img_txt" src="../../assets/image/logo2.png">
+        </ion-row>
+        <ion-card class="crd">
+
+          <p class="title">NAME</p>
+          <div class="button_start">PLAY</div>
+        </ion-card>
+      </ion-col>
+      <ion-col size="3"></ion-col> -->
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,43 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>ChessBoard</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-grid style="position: absolute;top: 0px;width: 100%;">
+    <ion-row style="top: 15px;">
+
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="6"></ion-col>
+      <ion-col size="2">
+        <ion-icon class="power" name="person-circle-outline" ></ion-icon>
+      </ion-col>
+    </ion-row>
+    <div *ngIf="chess?.pgn_data?.length===0">
+      <p class="pp">NO DATA</p>
+    </div>
+    <div *ngFor="let champ of chess?.pgn_data;let i = index" style="text-align-last: center;margin-bottom: 70px;" (click)="details()">
+      <p class="pp">{{chess?.tournament?.tournament_name}}</p>
+      <p class="pp">{{champ?.round}}</p>
+      <p class="pp">{{champ?.player1}}</p>
+      <ngx-chess-board id="{{'boardford'+i}}" class="bordlord" [size]="size" [lightTileColor]="lightTileColor"
+        [darkTileColor]="darkTileColor" [dragDisabled]="dargdraw" [pieceIcons]="pieces">
+      </ngx-chess-board>
+      <p class="pp">{{champ?.player2}}</p>
+    </div>
+
+
+
+  </ion-grid>
+
+</ion-content>
+<!-- <ngx-chess-board #board></ngx-chess-board> -->

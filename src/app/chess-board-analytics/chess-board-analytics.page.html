@@ -1,0 +1,204 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>ChessBoard</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <ion-grid style="position: absolute;top: 0px;width: 100%;">
+    <ion-row style="top: 15px;">
+
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="6"></ion-col>
+      <ion-col size="2">
+        <ion-icon class="power" name="person-circle-outline" ></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" style="text-align-last: center;" (click)="changeTheme()">
+        <ion-icon class="power" name="apps-outline" style="color:#ecc023 ;"></ion-icon>
+
+
+        <p class="pp1">Theme</p>
+      </ion-col>
+      <ion-col size="2" style="text-align-last: center;" (click)="resetImage()">
+        <ion-icon class="power" name="refresh-circle-outline" style="color:#ecc023 ;"></ion-icon>
+        <p class="pp1">Reset Theme</p>
+      </ion-col>
+
+      <ion-col size="3" style="text-align-last: center;" (click)="reset()">
+        <ion-icon class="power" name="refresh-circle-outline" style="color:#ecc023 ;"></ion-icon>
+        <p class="pp1">Reset Board</p>
+      </ion-col>
+      <ion-col size="2" style="text-align-last: center;" (click)="flipBoard()">
+        <ion-icon class="power" name="shuffle-outline" style="color:#ecc023 ;"></ion-icon>
+        <p class="pp1">Reverse</p>
+      </ion-col>
+      <ion-col size="2" style="text-align-last: center;" (click)="uploadFen()">
+        <ion-icon class="power" name="cloud-upload-outline" style="color:#ecc023 ;"></ion-icon>
+
+
+        <p class="pp1">FEN Upload</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      
+      <ion-col size="3" style="text-align-last: center;" (click)="uploadPgn()">
+        <ion-icon class="power" name="cloud-upload-outline" style="color:#ecc023 ;"></ion-icon>
+
+
+        <p class="pp1">PGN Upload</p>
+      </ion-col>
+      <ion-col size="3" style="text-align-last: center;" (click)="enterFEN()">
+        <ion-icon class="power" name="documents-outline" style="color:#ecc023 ;"></ion-icon>
+
+
+        <p class="pp1">FEN</p>
+      </ion-col>
+      <ion-col size="3" style="text-align-last: center;" (click)="enterPGN()">
+        <ion-icon class="power" name="documents-outline" style="color:#ecc023 ;"></ion-icon>
+
+
+        <p class="pp1">Enter PGN</p>
+      </ion-col>
+      <ion-col size="3" style="text-align-last: center;" (click)="openPices()">
+        <ion-icon class="power" name="dice-outline" style="color:#ecc023 ;"></ion-icon>
+
+
+        <p class="pp1">PIECE</p>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col size="3">
+
+        <ion-button (click)="changeTheme()" style="width: 100%;--background:#ecc023;font-size: 10px;">
+          Theme
+        </ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="resetImage()" style="width: 100%;--background:#ecc023;font-size: 10px;">
+          Reset
+        </ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="uploadPgn()" style="width: 100%;--background:#ecc023;font-size: 10px;">
+          Upload PGN
+        </ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="enterFEN()" style="width: 100%;--background:#ecc023;font-size: 10px;">
+          Enter FEN
+        </ion-button>
+      </ion-col>
+    </ion-row> -->
+    <div *ngIf="isThemeChangeEnabled">
+      <ion-row>
+        <ion-col size="3" *ngFor="let image of boardImages" (click)="imageClick(image)"
+          style="text-align-last: center;">
+          <img [src]="image.root" style="height: 30px;max-width: 70px;">
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngIf="isFEN" style="border-radius: 5px;">
+      <ion-input placeholder="Enter FEN" [(ngModel)]="publicFEN"
+        style="color: white;border: 1px solid #ecc023; border-radius: 5px;"></ion-input>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button (click)="enterFEN()" style="width: 100%;--background:#ecc023;font-size: 10px;">
+            CANCEL
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button (click)="submitFEN()" style="width: 100%;--background:#ecc023;font-size: 10px;">
+            SUBMIT
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </div>
+
+    <div *ngIf="isPGN" style="border-radius: 5px;">
+      <ion-input placeholder="Enter PGN" [(ngModel)]="publicPGN"
+        style="color: white;border: 1px solid #ecc023; border-radius: 5px;"></ion-input>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button (click)="enterPGN()" style="width: 100%;--background:#ecc023;font-size: 10px;">
+            CANCEL
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button (click)="submitPGN()" style="width: 100%;--background:#ecc023;font-size: 10px;">
+            SUBMIT
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </div>
+
+    <div *ngIf="isPieceEnabled">
+      <ion-row>
+        <ion-col size="3" *ngFor="let piece of pieceRoutes" (click)="pieceClick(piece)"
+          style="text-align-last: center;display: flex;">
+          <img src="../../assets/image/piece{{piece.url}}wK.svg" style="height: 30px;max-width: 70px;">
+          <img src="../../assets/image/piece{{piece.url}}bK.svg" style="height: 30px;max-width: 70px;">
+        </ion-col>
+      </ion-row>
+    </div>
+
+
+    <div style="text-align-last: center;">
+      <div style="display: flex;justify-content: flex-end;margin-bottom: 20px;">
+        <input [style.background]="darkTileColor" 
+          [cpPresetColors]="['#fff', '#000', '#2889e9', '#e920e9', '#fff500', 'rgb(236,64,64)']"
+          [(colorPicker)]="darkTileColor" style="width: 50px;" (colorPickerChange)="colorChange($event)" />
+        <input  [style.background]="lightTileColor"
+          [cpPresetColors]="['#fff', '#000', '#2889e9', '#e920e9', '#fff500', 'rgb(236,64,64)']"
+          [(colorPicker)]="lightTileColor" style="width: 50px;" />
+      </div>
+      <p class="pp">{{chess?.tournament?.tournament_name}}</p>
+      <p class="pp">{{chess?.pgn_data[0]?.round}}</p>
+      <p class="pp">{{chess?.pgn_data[0]?.player1}}</p>
+      <ngx-chess-board #boardchess id="boardchess" [size]="size" [lightTileColor]="lightTileColor"
+        [darkTileColor]="darkTileColor" (moveChange)="getMoves($event)" 
+        [drawDisabled]="dragndraw" [pieceIcons]="pieces">
+      </ngx-chess-board>
+      <p class="pp">{{chess?.pgn_data[0]?.player2}}</p>
+      <p class="pp" *ngIf="iswhite">white to move</p>
+      <p class="pp" *ngIf="!iswhite">Black to move</p>
+      <ion-row style="text-align: center;">
+        <ion-col size="2">
+          <ion-icon class="power" name="play-back-outline" (click)="extremeBack()"></ion-icon>
+        </ion-col>
+        <ion-col size="2">
+          <ion-icon class="power" name="chevron-back-outline" (click)="back()"></ion-icon>
+        </ion-col>
+        <ion-col size="4">
+          <ion-icon *ngIf="!isPlaying" class="power" name="play-circle-outline" (click)="playChess()"></ion-icon>
+          <ion-icon *ngIf="isPlaying" class="power" name="pause-circle-outline" (click)="playChess()"></ion-icon>
+        </ion-col>
+        <ion-col size="2">
+          <ion-icon class="power" name="chevron-forward-outline" (click)="forward()"></ion-icon>
+        </ion-col>
+        <ion-col size="2">
+          <ion-icon class="power" name="play-forward-outline" (click)="extremeForward()"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div class="analyse" (click)="goToLive()">Live</div>
+      <div style="height: 200px;overflow-y: scroll;border: 2px solid #ecc023;border-radius: 10px;width: 70%;margin-left: 15%;">
+        <div #divMessages id="divMessagess"></div>
+      </div>
+     
+    </div>
+
+  </ion-grid>
+
+</ion-content>

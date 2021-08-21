@@ -1,0 +1,48 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu class="mn" contentId="main-content" type="overlay" (ionDidOpen)="menuOpened()" (ionDidClose)="menuClosed()" (click)="menuClick()">
+      <ion-content class="myview">
+        <ion-grid>
+          <ion-row>
+            <img style="max-width: 45%;margin: 0 auto;" class="img_txt" src="../../assets/image/logo_text.png">
+          </ion-row>
+        </ion-grid>
+         <ion-list id="inbox-list" style="background-color: transparent;">
+          <!-- <ion-list-header>Inbox</ion-list-header>
+          <ion-note>hi@ionicframework.com</ion-note> -->
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index" >
+            <ion-row (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i" (click)="logout(p.title)">
+              <ion-col size="4">
+                <ion-icon  [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'" 
+                style="color: #eabf1f;
+                font-size: 25px;"
+                ></ion-icon>
+                <!-- <ion-icon name="mail-open-outline"></ion-icon> -->
+              </ion-col>
+              <ion-col size="6">
+                <ion-label style="color: #eabf1f;
+                font-size: 14px;">{{ p.title }}</ion-label>
+              </ion-col>
+              <ion-col size="2"></ion-col>
+            </ion-row>
+            <!-- <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item> -->
+          </ion-menu-toggle>
+        </ion-list>
+
+        <!-- <ion-list id="labels-list">
+          <ion-list-header>Labels</ion-list-header>
+
+          <ion-item *ngFor="let label of labels" lines="none">
+            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+            <ion-label>{{ label }}</ion-label>
+          </ion-item>
+        </ion-list> -->
+      </ion-content> 
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

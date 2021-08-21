@@ -1,0 +1,146 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+
+<ion-content scroll="false" class="myview">
+
+  <div>
+
+
+  </div>
+  <ion-grid style="position: absolute;top: 0px;width: 100%;">
+    <ion-row style="top: 15px;">
+
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="4"></ion-col>
+      <ion-col size="4">
+        <ion-button (click)="presentPopover($event)" style="font-size: 10px;--background:#ecc023;">
+          Tournament
+          <ion-icon style="color: white;font-size: x-small;" name="chevron-down-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <P class="p_info">TOURNAMENT DETAILS</P>
+    <ion-row class="row1">
+      <ion-col size="12">
+        <p class="pp">Tournamnent Name</p>
+        <ion-input class="inp" [(ngModel)]="tournament_name" placeholder="**********************"></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <p class="pp">Tournament Description</p>
+        <ion-input class="inp" [(ngModel)]="tournament_description" placeholder="**********************"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="12">
+        <p class="pp">Location</p>
+        <ion-input class="inp" [(ngModel)]="location" placeholder="**********************"></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <p class="pp">Country</p>
+        <ion-input class="inp" [(ngModel)]="country" placeholder="**********************"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row1">
+      <!-- <ion-col size="12">
+        <p class="pp">Type</p>
+        <ion-input class="inp" [(ngModel)]="type" placeholder="**********************"></ion-input>
+      </ion-col> -->
+      <!-- <ion-col size="12">
+        <p class="pp">Type</p>
+        <ion-select [(ngModel)]="type" placeholder="Select Type" class="inp">
+          <ion-select-option *ngFor="let item of types" value="{{item}}">{{item}}</ion-select-option>
+
+        </ion-select>
+
+      </ion-col> -->
+      
+      <ion-col size="12">
+        <p class="pp">Type</p>
+        <ngx-select-dropdown (change)="selectionChanged($event)" [multiple]="false" [(ngModel)]="type" [config]="config" [options]="types"></ngx-select-dropdown>
+
+      </ion-col>
+      <ion-col size="12">
+        <p class="pp">Laws of Chess</p>
+        <ion-input class="inp" [(ngModel)]="laws_of_chess" placeholder="**********************"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="12">
+        <p class="pp">Start Date</p>
+        <!-- <ion-label>YYYY-MM-DD</ion-label> -->
+        <ion-datetime class="inp" [(ngModel)]="start_date" displayFormat="YYYY-MM-DD"
+          placeholder="{{start_date | date:'yyyy-MM-dd'}}" max="2050"></ion-datetime>
+      </ion-col>
+      <ion-col size="12">
+        <p class="pp">End Date</p>
+        <ion-datetime class="inp" [(ngModel)]="end_date" displayFormat="YYYY-MM-DD"
+          placeholder="{{end_date | date:'yyyy-MM-dd'}}" max="2050"></ion-datetime>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="12">
+        <p class="pp">Number of Round</p>
+        <ion-input class="inp" [(ngModel)]="rounds" placeholder="**********************"></ion-input>
+      </ion-col>
+      <!-- <ion-col size="12">
+        <p class="pp">TimeZone</p>
+        <ion-input class="inp" [(ngModel)]="timezone" placeholder="**********************"></ion-input>
+      </ion-col> -->
+      <ion-col size="12">
+        <p class="pp">TimeZone</p>
+        <ngx-select-dropdown (change)="selectionChanged($event)" [multiple]="false" [(ngModel)]="timezone" [config]="config" [options]="timeZones"></ngx-select-dropdown>
+        <!-- <ion-select [(ngModel)]="timezone" placeholder="Select Timezone" class="inp">
+          <ion-select-option *ngFor="let item of timeZones" value="{{item}}">{{item}}</ion-select-option>
+
+        </ion-select> -->
+
+      </ion-col>
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="12">
+        <p class="pp">Start Time</p>
+        <ion-datetime class="inp" [(ngModel)]="start_time" displayFormat="h:mm A"
+          placeholder="{{start_time | date:'hh:mm a'}}"></ion-datetime>
+      </ion-col>
+
+      <ion-col size="12">
+        <p class="pp">End Time</p>
+        <ion-datetime class="inp" [(ngModel)]="end_time" displayFormat="h:mm A"
+          placeholder="{{end_time | date:'hh:mm a'}}"></ion-datetime>
+      </ion-col>
+      <!-- <ion-col size="12">
+      <ion-item>
+        <ion-label>YYYY-MM-DD</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" placeholder="Select Start Date"></ion-datetime>
+      </ion-item>
+    </ion-col> -->
+    </ion-row>
+    <!-- <ion-row class="row2">
+      <ion-col size="12">
+        <p class="pp">Password</p>
+        <ion-input class="inp" placeholder="Password"></ion-input>
+      </ion-col>
+    </ion-row>-->
+
+    <!-- <div class="button_shade"></div> -->
+    <div class="button_start" (click)="tournaments()">Submit</div>
+
+  </ion-grid>
+
+</ion-content>

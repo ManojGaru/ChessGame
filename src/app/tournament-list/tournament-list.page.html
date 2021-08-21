@@ -1,0 +1,87 @@
+
+
+
+<ion-content  scroll="false" class="myview">
+  <ion-grid style="position: absolute;top: 0px;width: 100%;">
+    
+    <ion-row style="top: 15px;">
+
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="6"></ion-col>
+      <ion-col size="2">
+        <ion-icon class="power" name="person-circle-outline" (click)="profile()"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+     
+        <img class="img_txt"  src="../../assets/image/cup.png">
+      
+    </ion-row>
+    <P class="p_info">TOURNAMENT</P>
+    <div class="crt" (click)="createTournament()">
+      + Create Tournament
+    </div>
+    <ion-row class="row1">
+      <ion-col size="6" *ngFor="let tournament of tournaments">
+       <ion-card class="crd">
+         <p class="title">NAME</p>
+         <P class="data">{{tournament.name}}</P>
+         <p class="title">DESCRIMENT</p>
+         <P class="data">{{tournament.desc}}</P>
+         <p class="title">STARTING DAY</p>
+         <P class="data">{{tournament.startdate | date: 'dd/MM/yyyy'}}</P>
+         <ion-row class="rr">
+           <ion-col size="8">
+            <p class="title">TYPE</p>
+            <P class="data">{{tournament.type}}</P>
+           </ion-col>
+           <ion-col size="4">
+             <div>
+              <P class="ve" (click)="view(tournament)">VIEW</P>
+             </div>
+            
+          </ion-col>
+         </ion-row>
+         <ion-row class="rr">
+          <ion-col size="8">
+           <p class="title">STATUS</p>
+           <P class="dataa">{{tournament.status}}</P>
+          </ion-col>
+          <ion-col size="4">
+            <div>
+              <P class="ve" (click)="edit(tournament)">EDIT</P>
+            </div>
+           
+         </ion-col>
+        </ion-row>
+        <ion-row class="rr">
+        
+          <ion-col size="12">
+            <div>
+              <P class="ve1" (click)="delete(tournament)">DELETE</P>
+            </div>
+           
+         </ion-col>
+        </ion-row>
+       </ion-card>
+      </ion-col>
+      
+      
+    </ion-row>
+   
+  
+    <!-- <div class="button_shade"></div>
+    <div class="button_start" (click)="submit()" >SignUp</div>       -->
+  </ion-grid>
+  <!-- <div class="crt" (click)="createTournament()">
+    + Create Tournament
+  </div> -->
+</ion-content>

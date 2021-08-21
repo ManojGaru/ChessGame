@@ -1,0 +1,84 @@
+
+
+
+<ion-content  scroll="false" class="myview">
+  <ion-grid style="position: absolute;top: 0px;width: 100%;">
+    
+    <ion-row style="top: 15px;">
+
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="6"></ion-col>
+      <ion-col size="2">
+        <ion-icon class="power" name="power-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+     
+        <img class="img_txt"  src="../../assets/image/cup.png">
+      
+    </ion-row>
+    <P class="p_info">USER</P>
+    <ion-row class="row1">
+      <ion-col size="4" *ngFor="let user of tournamentUsers">
+       <ion-card class="crd" (click)="payment()">
+        <ion-icon class="icn" name="person-circle-outline"></ion-icon>
+        <div>
+          <P class="data">ABC</P>
+          <p class="title">FULLNAME</p>
+          <P class="data">ABC</P>
+          <p class="title">MEMBERSHIP</p>
+          <P class="data">ABC</P>
+          <p class="title">PURCHASE & DATE</p>
+        </div>
+        <div class="button_start" ></div>
+
+         <!-- <p class="title">NAME</p>
+         <P class="data">ABC</P>
+         <p class="title">DESCRIMENT</p>
+         <P class="data">ABC</P>
+         <p class="title">STARTING DAY</p>
+         <P class="data">DEC 20,2020</P>
+         <ion-row class="rr">
+           <ion-col size="8">
+            <p class="title">TYPE</p>
+            <P class="data">STANDERD</P>
+           </ion-col>
+           <ion-col size="4">
+             <div>
+              <P class="ve">VIEW</P>
+             </div>
+            
+          </ion-col>
+         </ion-row>
+         <ion-row class="rr">
+          <ion-col size="8">
+           <p class="title">STATUS</p>
+           <P class="dataa">ON</P>
+          </ion-col>
+          <ion-col size="4">
+            <div>
+              <P class="ve">EDIT</P>
+            </div>
+           
+         </ion-col>
+        </ion-row> -->
+       </ion-card>
+      </ion-col>
+      
+      
+    </ion-row>
+   
+  
+    <!-- <div class="button_shade"></div>
+    <div class="button_start" (click)="submit()" >SignUp</div>       -->
+  </ion-grid>
+  
+</ion-content>

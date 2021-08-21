@@ -1,0 +1,85 @@
+.row1{
+    width: 85%;
+    margin: 8%;
+    margin-top: -20px;
+}
+.row2{
+    width: 85%;
+    margin: 8%;
+    margin-top: -45px;
+}
+.row3{
+    width: 85%;
+    text-align: right;
+   // margin: 8%;
+  //  margin-top: -20px;
+}
+.inp{
+    border: 2px solid #fff;
+    color: #ecc023;
+    font-weight: bold;
+    margin-top: -10px;
+    border-radius: 25px;
+}
+.pp{
+    color: white;
+   // line-height: 0px;
+   margin-top: 10px;
+    font-weight: bold;
+    font-size: 13px;
+   // text-align: center;
+   text-align: center;
+   text-transform: uppercase;
+}
+.ppp{
+    font-size: 16px;
+    font-weight: bold;
+    color: #ecc023;
+   // margin-left: 10px;
+   text-align: center;
+
+}
+.button_start{
+    width: 200px;
+    height: 36px;
+    color: white;
+    font-size: 14px;
+    font-weight: bolder;
+    background-color: #f90707;
+    border-radius: 4px;
+    /* margin: 4px; */
+    margin: 10px auto;
+    padding: 9px;
+    -moz-text-align-last: center;
+    text-align-last: center;
+    text-transform: uppercase;
+
+}
+.img_txt{
+    height: 264px;
+    width: 210px;
+    /* left: 26%; */
+    /* flex: auto; */
+    margin-left: 20%;
+    margin-top: -32px;
+}
+.new-background-color{
+    --background: #000000;
+}
+ion-content{
+    --background: url('../../assets/image/black_back.png') no-repeat center/cover fixed;
+   
+}
+.t-img{
+    height: 56px;
+    margin-left: -25px;
+}
+.password_input_container{
+    padding: 20px;
+    background-color: #403308;
+}
+.disclaimer{
+    font-size: 8px;
+    color: #fff;
+    font-weight: bold;
+}

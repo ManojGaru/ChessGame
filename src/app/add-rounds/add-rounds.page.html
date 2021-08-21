@@ -1,0 +1,94 @@
+
+<ion-content scroll="false" class="myview">
+
+  <div>
+
+
+  </div>
+  <ion-grid style="position: absolute;top: 0px;width: 100%;">
+    <ion-row style="top: 15px;">
+
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="4"></ion-col>
+      <ion-col size="4">
+        <ion-button (click)="presentPopover($event)" style="font-size: 10px;--background:#ecc023;">
+          Tournament
+          <ion-icon style="color: white;font-size: x-small;" name="chevron-down-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <P class="p_info">ROUND DETAILS</P>
+   
+    <ion-card style="background-color: #ecc023;color: #fff;">
+      <ion-card-header (click)="toggleList()">
+        <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+        <ion-row>
+          <ion-col size="11">
+            <ion-card-title>Rounds</ion-card-title>
+          </ion-col>
+          <ion-col size="1">
+            <ion-icon  style="color: #fff;font-size: 24px;" name="chevron-up-outline" *ngIf="isList"></ion-icon>
+            <ion-icon style="color: #fff;font-size: 24px;" name="chevron-down-outline" *ngIf="!isList"></ion-icon>
+          </ion-col>
+        </ion-row>
+        
+        
+      </ion-card-header>
+      <ion-card-content *ngIf="isList">
+        <ion-row *ngFor="let item of round_opponents" > 
+          <ion-col size="10">{{item.player_per_round}} No of Rounds</ion-col>
+          <ion-col size="1"><ion-icon name="create-outline" style="font-size: 25px;" (click)="editRound(item)"></ion-icon></ion-col>
+          <ion-col size="1"><ion-icon name="close-circle-outline" style="font-size: 25px;" (click)="removePlayer(item)"></ion-icon></ion-col>
+        </ion-row>
+      
+       
+      </ion-card-content>
+      
+    </ion-card>
+    <ion-row class="row1">
+      <ion-col size="12">
+        <p class="pp">Player Per Round</p>
+        <ion-input class="inp" type="number" [(ngModel)]="player_per_round" placeholder="**********************"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="12">
+        <p class="pp">Player1</p>
+        <!-- <ion-select [(ngModel)]="player1" placeholder="Select Player" class="inp" (ionChange)="selectPlayer($event)">
+        <ion-select-option value="{{player.id}}" *ngFor="let player of players">{{player.name}} {{player.last}}</ion-select-option>
+        </ion-select> -->
+        <ngx-select-dropdown (change)="selectPlayer($event)" [multiple]="false" [(ngModel)]="player1" [config]="config" [options]="players"></ngx-select-dropdown>
+
+      </ion-col>
+      <ion-col size="12" >
+        <p class="pp">Player2</p>
+        <!-- <ion-select [(ngModel)]="player2" placeholder="Select Player" class="inp" (ionChange)="selectPlayer($event)">
+        <ion-select-option value="{{player.id}}" *ngFor="let player of players">{{player.name}} {{player.last}}</ion-select-option>
+        </ion-select> -->
+        <ngx-select-dropdown (change)="selectPlayer($event)" [multiple]="false" [(ngModel)]="player2" [config]="config" [options]="players"></ngx-select-dropdown>
+
+      </ion-col>
+     
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6">
+        <div class="button_start" (click)="addPlayer()">ADD</div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="button_start" (click)="goToRound()">SUBMIT</div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

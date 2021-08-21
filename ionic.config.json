@@ -1,0 +1,7 @@
+{
+  "name": "LiveChess",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

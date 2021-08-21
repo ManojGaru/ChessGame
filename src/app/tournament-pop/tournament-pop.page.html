@@ -1,0 +1,33 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>TournamentPop</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content style="border:2px solid #ecc023">
+  <ion-list class="ion-no-margin ion-no-padding">
+    <!-- <ion-list-header color="dark" class="text-10">
+      <ion-label class="fw700">Tournament</ion-label>
+    </ion-list-header> -->
+
+    <ion-item style="--background:black;color:white" class="text-10" (click)="goToDesiredPage(1)">
+      <ion-icon name="create-outline" color="light"></ion-icon>
+      <ion-label>Basic Tournament Details</ion-label>
+    </ion-item>
+
+    <ion-item style="--background:black;color:white" class="text-10" (click)="goToDesiredPage(2)">
+      <ion-icon name="create-outline" color="light"></ion-icon>
+      <ion-label>Players</ion-label>
+    </ion-item>
+
+    <ion-item style="--background:black;color:white" class="text-10" (click)="goToDesiredPage(3)">
+      <ion-icon name="create-outline" color="light"></ion-icon>
+      <ion-label>Round & Opponent</ion-label>
+    </ion-item>
+  
+  <ion-item *ngIf="is_approved" style="--background:black;color:white" class="text-10" (click)="goToDesiredPage(4)">
+    <ion-icon name="create-outline" color="light"></ion-icon>
+    <ion-label>Upload PGN</ion-label>
+  </ion-item>
+</ion-list>
+</ion-content>

@@ -1,0 +1,93 @@
+
+<ion-content scroll="false" class="myview">
+
+  <div>
+
+
+  </div>
+  <ion-grid style="position: absolute;top: 0px;width: 100%;">
+    <ion-row style="top: 15px;">
+
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="4"></ion-col>
+      <ion-col size="4">
+        <ion-button (click)="presentPopover($event)" style="font-size: 10px;--background:#ecc023;">
+          Tournament
+          <ion-icon style="color: white;font-size: x-small;" name="chevron-down-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <P class="p_info">PGN DETAILS</P>
+   
+    <ion-card  style="background-color: #ecc023;color: rgb(175, 170, 170);">
+      <ion-card-header (click)="toggleList()">
+        <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+        <ion-row>
+          <ion-col size="11">
+            <ion-card-title>PGN List</ion-card-title>
+          </ion-col>
+          <ion-col size="1">
+            <ion-icon  style="color: #fff;font-size: 24px;" name="chevron-up-outline" *ngIf="isList"></ion-icon>
+            <ion-icon style="color: #fff;font-size: 24px;" name="chevron-down-outline" *ngIf="!isList"></ion-icon>
+          </ion-col>
+        </ion-row>
+        
+        
+      </ion-card-header>
+    
+      <ion-card-content *ngIf="isList">
+      
+        <ion-row *ngFor="let item of pgns">
+          <ion-col size="10" style="color: #fff;"> {{item.round}}</ion-col>
+          <ion-col size="2"><ion-icon  name="close-circle-outline" style="font-size: 25px;color: #fff;" (click)="removePgn(item)"></ion-icon></ion-col>
+        </ion-row>
+      
+       
+      </ion-card-content>
+      
+    </ion-card>
+    <ion-row class="row1">
+      <ion-col size="12" *ngIf="rounds.length>0">
+        <p class="pp">Round</p>
+        <!-- <ion-select [(ngModel)]="round" placeholder="Select round" class="inp">
+          <ion-select-option *ngFor="let item of rounds" value="{{item.id}}">{{item.name}}</ion-select-option>
+        </ion-select> -->
+        <ngx-select-dropdown [multiple]="false" [(ngModel)]="round" [config]="config" [options]="rounds"></ngx-select-dropdown>
+      </ion-col>
+     
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="12" *ngIf="games.length>0">
+        <p class="pp">Game</p>
+        <!-- <ion-select [(ngModel)]="round" placeholder="Select round" class="inp">
+          <ion-select-option *ngFor="let item of rounds" value="{{item.id}}">{{item.name}}</ion-select-option>
+        </ion-select> -->
+        <ngx-select-dropdown [multiple]="false" [(ngModel)]="game" [config]="config" [options]="games"></ngx-select-dropdown>
+      </ion-col>
+      <ion-col size="12">
+        <p class="pp">Link</p>
+        <ion-input class="inp" [(ngModel)]="link" placeholder="**********************"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6">
+        <div class="button_start" (click)="addPgn()">ADD</div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="button_start" (click)="submit()">SUBMIT</div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

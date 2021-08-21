@@ -1,0 +1,49 @@
+
+<ion-content  scroll="false" class="myview">
+  <ion-grid style="position: absolute;top: 0px;width: 100%;">
+    
+    <ion-row style="top: 15px;">
+
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="6"></ion-col>
+      <ion-col size="2">
+        <ion-icon class="power" name="power-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+     
+        <img class="img_txt"  src="../../assets/image/cup.png">
+      
+    </ion-row>
+    <P class="p_info">MEMBERSHIP</P>
+    <p class="title" style="text-align: center;margin-top: 20px;">My Balance : {{balance}}</p>
+    
+    <p class="title" *ngIf="isHigher" style="text-align: center;margin-top: 50px;">You are the top level member</p>
+    <ion-row class="row1">
+     
+      <ion-col size="6" *ngFor="let mem of memberShips">
+       <ion-card class="crd" (click)="payment(mem)" *ngIf="mem.active === false">
+        <ion-icon class="icn" name="person-circle-outline"></ion-icon>
+        <div>
+          <P class="data">LEVEL {{mem?.level}}</P>
+          <p class="title">PRICE</p>
+          <P class="data">${{mem?.price}}</P>
+          <p class="title">ADD ON FEATURE</p>
+          <P class="data">{{mem?.product}}</P>
+          <p class="title">ACTION</p>
+        </div>
+        <div class="button_start" >BUY</div>
+       </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>

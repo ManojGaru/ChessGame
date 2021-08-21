@@ -1,0 +1,74 @@
+ion-content{
+    --background: url('../../assets/image/black_back.png') no-repeat center/cover fixed;
+   
+}
+.t-img{
+    height: 56px;
+    margin-left: -25px;
+}
+.power{
+    color: #ecc023;
+    font-size: 25px;
+    margin: 8px;
+}
+.pp{
+    color: white;
+    line-height: 0px;
+  // margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.pp1{
+    color: white;
+   // line-height: 0px;
+  // margin-top: 10px;
+   // font-weight: bold;
+    text-align: center; 
+    font-size: 10px;
+}
+.ppp{
+    color: white;
+    //line-height: 0px;
+  // margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.li{
+    color: #fff;
+    display: flex;
+  //  list-style-type: none;
+
+}
+.btnn{
+    background: transparent;
+    color: #fff;
+    text-decoration-line: underline;
+    font-size: 20px;
+}
+
+#board #drag .board-row .board-col{
+    background-color: red;
+}
+.possible-point{
+    border:1px solid red !important;
+  }
+ .color-picker{
+     z-index: 9999999 !important;
+ }
+ .analyse{
+    color: #fff;
+    border: 3px solid #ecc023;
+    width: 100px;
+    padding: 6px;
+    border-radius: 5px;
+    margin: 10px auto;
+ }
+ .bb1{
+    padding: 12px;
+    background-color: #b67127;
+    border-radius: 7px;
+ }
+ #pgn{
+     border-bottom: 1px solid #ecc023;
+     margin-top: 10px;
+ }

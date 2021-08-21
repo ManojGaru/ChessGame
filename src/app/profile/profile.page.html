@@ -1,0 +1,77 @@
+
+
+
+<ion-content  scroll="false" class="myview">
+  <ion-grid style="position: absolute;top: 0px;width: 100%;">
+    
+    <ion-row style="top: 15px;">
+
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="6"></ion-col>
+      <ion-col size="2">
+        <ion-icon class="power" name="person-circle-outline" (click)="profile()"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+     
+        <img class="img_txt"  src="{{'http://54.183.117.48:8000'+user?.image}}">
+      
+    </ion-row>
+    <P class="p_info">{{user?.user?.first_name}} {{user?.user?.last_name}}</P>
+    <ion-row class="row1">
+      <ion-col size="12" >
+       <ion-card class="crd">
+         <p class="title">UserName</p>
+         <P class="data">{{user?.user?.username}}</P>
+         <p class="title">Email</p>
+         <P class="data">{{user?.user?.email}}</P>
+         <p class="title">Contact No:</p>
+         <P class="data">{{user?.contact}}</P>
+         <p class="title">DOB</p>
+         <P class="data">{{user?.dob}}</P>
+         <p class="title">AGE</p>
+         <P class="data">{{user?.age}}</P>
+         <ion-row class="rr">
+           <ion-col size="12">
+            <p class="title">Gender</p>
+            <P class="data">{{user?.gender}}</P>
+           </ion-col>
+         </ion-row>
+         <ion-row class="rr">
+          <ion-col size="12">
+           <p class="title">Biography</p>
+           <P class="data">{{user?.bio}}</P>
+          </ion-col>
+        </ion-row>
+         <ion-row class="rr">
+          <ion-col size="8">
+           <!-- <p class="title">STATUS</p>
+           <P class="dataa">test</P> -->
+          </ion-col>
+          <ion-col size="4">
+            <div (click)="profile()">
+              <P class="ve">EDIT</P>
+            </div>
+           
+         </ion-col>
+        </ion-row>
+       </ion-card>
+      </ion-col>
+      
+      
+    </ion-row>
+   
+  
+    <!-- <div class="button_shade"></div>
+    <div class="button_start" (click)="submit()" >SignUp</div>       -->
+  </ion-grid>
+  
+</ion-content>

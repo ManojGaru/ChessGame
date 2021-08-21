@@ -1,0 +1,33 @@
+.button_start{
+    width: 158px;
+    height: 44px;
+    color: white;
+    position: absolute;
+    top: 72%;
+    left: 31%;
+    z-index: 1000;
+    font-size: 33px;
+    font-weight: bolder;
+    background-color: #ecc023;
+    border-radius: 6px;
+    text-align-last: center;
+}
+.button_shade{
+    width: 158px;
+    height: 44px;
+    color: white;
+    position: absolute;
+    top: 73%;
+    left: 32%;
+    z-index: 1000;
+    font-size: 33px;
+    font-weight: bolder;
+    background-color: #b59627;
+    border-radius: 6px;
+    -moz-text-align-last: center;
+    text-align-last: center;
+}
+ion-content{
+    --background: url('../../assets/image/splash.png') no-repeat center/cover fixed;
+   
+}

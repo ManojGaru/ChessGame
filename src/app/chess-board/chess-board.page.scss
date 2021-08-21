@@ -1,0 +1,23 @@
+ion-content{
+    --background: url('../../assets/image/black_back.png') no-repeat center/cover fixed;
+   
+}
+.t-img{
+    height: 56px;
+    margin-left: -25px;
+}
+.power{
+    color: #ecc023;
+    font-size: 25px;
+    margin: 8px;
+}
+.pp{
+    color: white;
+    line-height: 0px;
+  // margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.bordlord{
+    pointer-events: none;
+}

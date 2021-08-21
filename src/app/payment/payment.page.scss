@@ -1,0 +1,142 @@
+.row1{
+    width: 85%;
+    margin: 8%;
+    margin-top: -20px;
+}
+.row2{
+  //  width: 85%;
+  //  margin: 8%;
+    margin-top: -10px;
+   border: 1px solid #ecc023;
+   margin-bottom: 10px;
+   border-radius: 7px;
+}
+.row3{
+    width: 85%;
+    text-align: right;
+   // margin: 8%;
+  //  margin-top: -20px;
+}
+.inp{
+    border: 1px solid #ecc023;
+    color: #fff;
+   // font-weight: bold;
+    margin-top: -10px;
+    border-radius: 7px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+.inp2{
+    //border: 1px solid #ecc023;
+    color: #fff;
+   // font-weight: bold;
+   // margin-top: -10px;
+    border-radius: 7px;
+    height: 15px;
+   // margin-bottom: 10px;
+   font-size: 13px;
+}
+.pp{
+    color: white;
+   // line-height: 0px;
+   margin-top: 10px;
+    font-weight: bold;
+    font-size: 13px;
+   // text-align: center;
+   text-align: center;
+   text-transform: uppercase;
+}
+.ppp{
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    margin-left: 3px;
+}
+.button_start{
+    width: 200px;
+    height: 38px;
+    color: white;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: #ecc023;
+    border-radius: 12px;
+    margin: 0 auto;
+    // -moz-text-align-last: center;
+    text-align-last: center;
+    padding: 10px;
+
+}
+.img_txt{
+    height: 264px;
+    width: 210px;
+    /* left: 26%; */
+    /* flex: auto; */
+    margin-left: 20%;
+    margin-top: -32px;
+}
+.new-background-color{
+    --background: #000000;
+}
+ion-content{
+    --background: url('../../assets/image/black_back.png') no-repeat center/cover fixed;
+   
+}
+.t-img{
+    height: 56px;
+    margin-left: -25px;
+}
+.password_input_container{
+    padding: 10px;
+    background-color: #403308;
+    opacity: 0.9;
+}
+.disclaimer{
+    font-size: 8px;
+    color: #fff;
+    font-weight: bold;
+}
+.cell-class-l {
+    border-color: #ecc023; 
+    border-width: .01em; 
+    border-style:solid; margin-bottom : -1px;
+    border-bottom-left-radius: 7px;
+   // border-radius: 7px;
+  //  background-color: lightgrey
+  }
+  .cell-class-r {
+    border-color: #ecc023; 
+    border-width: .01em; 
+    border-style:solid; margin-bottom : -1px;
+    border-bottom-right-radius: 7px;
+  //  background-color: lightgrey
+  }
+  .cell-class-tl {
+    border-color: #ecc023; 
+    border-width: .01em; 
+    border-style:solid; margin-bottom : -1px;
+    border-top-left-radius: 7px;
+   // border-radius: 7px;
+  //  background-color: lightgrey
+  }
+  .cell-class-tr {
+    border-color: #ecc023; 
+    border-width: .01em; 
+    border-style:solid; margin-bottom : -1px;
+    border-top-right-radius: 7px;
+  //  background-color: lightgrey
+  }
+  .cell-class {
+    border-color: #ecc023; 
+    border-width: .01em; 
+    border-style:solid; margin-bottom : -1px;
+  //  border-radius: 7px;
+  //  background-color: lightgrey
+  }
+  .selct{
+    height: 15px;
+    color: white;
+  }
+  ion-input{
+    --placeholder-color: #fff;
+    --placeholder-opacity: 1;
+}

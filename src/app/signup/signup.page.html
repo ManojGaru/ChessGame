@@ -1,0 +1,76 @@
+
+
+
+<ion-content  scroll="false" class="myview">
+  <ion-grid style="position: absolute;top: 0px;">
+    
+    <ion-row style="top: 15px;">
+      
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+      
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="8"></ion-col>
+    </ion-row>
+    <ion-row>
+     
+        <img class="img_txt"  src="../../assets/image/logo_text.png">
+      
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="12">
+        <p class="pp">Username*</p>
+        <ion-input class="inp" [(ngModel)]="username" (ionChange)="getUserName()" placeholder="****************"></ion-input>
+        <p class="p1" *ngIf="responseError?.username">{{responseError.username[0]}}</p>
+      </ion-col>
+      <ion-col size="12">
+        <p class="pp">First name*</p>
+        <ion-input class="inp" [(ngModel)]="firstname" placeholder="****************"></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <p class="pp">Last name*</p>
+        <ion-input class="inp" [(ngModel)]="lastname" placeholder="*****************"></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <p class="pp">Email*</p>
+        <ion-input class="inp" [(ngModel)]="email" placeholder="*****************"></ion-input>
+        <p class="p1" *ngIf="responseError?.email">{{responseError.email[0]}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row2">
+      <ion-col size="12">
+        <p class="pp">Password*</p>
+        <ion-input type="password" maxlength="10" class="inp"[(ngModel)]="password" placeholder="******************"></ion-input>
+        <p class="p1" *ngIf="responseError?.password1">{{responseError.password1}}</p>
+      </ion-col>
+      <section>    
+        <ul class="my-nav">
+          <li>Your password can't be similar to your other personal information</li>
+          <li>Your password contains must be 8 characters</li>
+          <li>Your password can't be commonly used password</li>
+          <li>Your password can't be entirely numaric</li>
+        </ul>
+      </section>
+      <ion-col size="12">
+        <p class="pp"> Confirm Password*</p>
+        <ion-input type="password" maxlength="10" class="inp" [(ngModel)]="confirmpassword" placeholder="******************"></ion-input>
+        <p class="p1" *ngIf="responseError?.password2">{{responseError.password2}}</p>
+        <p 
+        style="color: white;
+        font-size: 11px;
+        text-align: center;">
+        Enter the same password as before, for verification</p>
+      </ion-col>
+    
+    </ion-row>
+  
+    <div class="button_shade"></div>
+    <div class="button_start" (click)="submit()" >SignUp</div>      
+  </ion-grid>
+  
+</ion-content>

@@ -1,0 +1,112 @@
+
+
+
+<ion-content  scroll="false" class="myview">
+ 
+  <div
+    >
+   
+  
+  </div>
+  <ion-grid style="position: absolute;top: 0px;width: 100%;">
+    
+    <ion-row style="top: 15px;">
+      
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+      
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="8"></ion-col>
+    </ion-row>
+    <!-- <ion-row>
+     
+        <img class="img_txt"  src="../../assets/image/logo_text.png">
+      
+    </ion-row> -->
+    <ion-row class="row1">
+      <ion-col size="12">
+        <p class="pp">pay with card</p>
+        <div class="password_input_container">
+          <p class="ppp">Email</p>
+          <ion-input class="inp" [(ngModel)]="email"></ion-input>
+          <p class="ppp">Card Information</p>
+          <ion-row class="row2">
+            <ion-col size="12">
+              <ion-input class="inp2" type="number" placeholder="16 DIGIT CARD NUMBER" [(ngModel)]="card_number"></ion-input>
+            </ion-col>
+            <ion-col size="6" class="cell-class-l">
+              <ion-input class="inp2"  type="number"  placeholder="MONTH" [(ngModel)]="exp"></ion-input>
+            </ion-col>
+            <ion-col size="6" class="cell-class-r">
+              <ion-input class="inp2" type="number"  placeholder="YEAR" [(ngModel)]="expy"></ion-input>
+            </ion-col>
+            <ion-col size="6" class="cell-class-r">
+              <ion-input class="inp2" type="number"  placeholder="CVV" [(ngModel)]="cvv"></ion-input>
+            </ion-col>
+          </ion-row>
+          <p class="ppp">Name of the Card</p>
+          <ion-input class="inp" [(ngModel)]="name"></ion-input>
+          <!-- <p class="ppp">Billing Address</p> -->
+          <!-- <ion-row class="row2">
+            <ion-col size="6" class="cell-class-tl">
+              <ion-label class="inp2" style="margin-left: 7%;">Country</ion-label>
+            </ion-col>
+            <ion-col size="6" class="cell-class-tr">
+             
+              <ion-select  cancelText="Nah" okText="Okay!" class="selct">
+                <ion-select-option value="bacon">Bacon</ion-select-option>
+                <ion-select-option value="olives">Black Olives</ion-select-option>
+                <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
+                <ion-select-option value="peppers">Green Peppers</ion-select-option>
+                <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
+                <ion-select-option value="onions">Onions</ion-select-option>
+                <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
+                <ion-select-option value="pineapple">Pineapple</ion-select-option>
+                <ion-select-option value="sausage">Sausage</ion-select-option>
+                <ion-select-option value="Spinach">Spinach</ion-select-option>
+              </ion-select>
+            </ion-col>
+            <ion-col size="12" class="cell-class">
+              <ion-input class="inp2" placeholder="Address line 1" ></ion-input>
+            </ion-col>
+            <ion-col size="12" class="cell-class">
+              <ion-input class="inp2" placeholder="Address line 2" ></ion-input>
+            </ion-col>
+            <ion-col size="6" class="cell-class">
+              <ion-input class="inp2" placeholder="City"></ion-input>
+            </ion-col>
+            <ion-col size="6" class="cell-class">
+              <ion-input class="inp2" placeholder="Pin"></ion-input>
+            </ion-col>
+            <ion-col size="6" class="cell-class-l">
+              <ion-label class="inp2" style="margin-left: 7%;">State</ion-label>
+            </ion-col>
+            <ion-col size="6" class="cell-class-r">
+              <ion-select  cancelText="Nah" okText="Okay!" class="selct">
+                <ion-select-option value="bacon">Bacon</ion-select-option>
+                <ion-select-option value="olives">Black Olives</ion-select-option>
+                <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
+                <ion-select-option value="peppers">Green Peppers</ion-select-option>
+                <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
+                <ion-select-option value="onions">Onions</ion-select-option>
+                <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
+                <ion-select-option value="pineapple">Pineapple</ion-select-option>
+                <ion-select-option value="sausage">Sausage</ion-select-option>
+                <ion-select-option value="Spinach">Spinach</ion-select-option>
+              </ion-select>
+            </ion-col>
+            
+          </ion-row> -->
+          
+          <div class="button_start" (click)="checkout()">Pay $ {{amount}}</div>
+        </div>
+      
+      </ion-col>
+    </ion-row> 
+  </ion-grid>
+</ion-content>

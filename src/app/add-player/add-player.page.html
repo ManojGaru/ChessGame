@@ -1,0 +1,145 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+
+<ion-content scroll="false" class="myview">
+
+  <div>
+
+
+  </div>
+  <ion-grid style="position: absolute;top: 0px;width: 100%;">
+    <ion-row style="top: 15px;">
+
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="4"></ion-col>
+      <ion-col size="4">
+        <ion-button (click)="presentPopover($event)" style="font-size: 10px;--background:#ecc023;">
+          Tournament
+          <ion-icon style="color: white;font-size: x-small;" name="chevron-down-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <P class="p_info">PLAYERS DETAILS</P>
+   
+    <ion-card  style="background-color: #ecc023;color: rgb(175, 170, 170);">
+      <ion-card-header (click)="toggleList()">
+        <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+        <ion-row>
+          <ion-col size="11">
+            <ion-card-title>Players</ion-card-title>
+          </ion-col>
+          <ion-col size="1">
+            <ion-icon  style="color: #fff;font-size: 24px;" name="chevron-up-outline" *ngIf="isList"></ion-icon>
+            <ion-icon style="color: #fff;font-size: 24px;" name="chevron-down-outline" *ngIf="!isList"></ion-icon>
+          </ion-col>
+        </ion-row>
+        
+        
+      </ion-card-header>
+    
+      <ion-card-content *ngIf="isList">
+        <ion-row *ngFor="let item of players">
+          <ion-col size="10"  style="color: #fff;" > {{item.first_name}} {{item.last_name}}</ion-col>
+          <ion-col size="1"><ion-icon name="create-outline" style="font-size: 25px;color: #fff;" (click)="editPlayer(item)"></ion-icon></ion-col>
+          <ion-col size="1"><ion-icon name="close-circle-outline" style="font-size: 25px;color: #fff;" (click)="removePlayer(item)"></ion-icon></ion-col>
+        </ion-row>
+      
+       
+      </ion-card-content>
+      
+    </ion-card>
+    <ion-row class="row1">
+      <ion-col size="12">
+        <p class="pp">Firt Name</p>
+        <ion-input class="inp" [(ngModel)]="first_name" placeholder="**********************"></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <p class="pp">Last Name</p>
+        <ion-input class="inp" [(ngModel)]="last_name" placeholder="**********************"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="12">
+        <p class="pp">rating</p>
+        <ion-input class="inp"  type="number"  [(ngModel)]="rating" placeholder="**********************"></ion-input>
+      </ion-col>
+      <!-- <ion-col size="12">
+        <p class="pp">Title</p>
+        <ion-input class="inp" [(ngModel)]="title" placeholder="**********************"></ion-input>
+      </ion-col> -->
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="12">
+        <p class="pp">gender</p>
+        <!-- <ion-select [(ngModel)]="gender" placeholder="Select Gender" class="inp">
+          <ion-select-option value="female">Female</ion-select-option>
+          <ion-select-option value="male">Male</ion-select-option>
+          <ion-select-option value="other">Other</ion-select-option>
+          <ion-select-option value="not known">Not Known</ion-select-option>
+        </ion-select> -->
+        <ngx-select-dropdown (change)="selectionChanged($event)"  [multiple]="false" [(ngModel)]="gender" [config]="config" [options]="genders"></ngx-select-dropdown>
+      </ion-col>
+      <ion-col size="12">
+        <p class="pp">Title</p>
+        <!-- <ion-select [(ngModel)]="title" placeholder="Select Title" class="inp">
+          <ion-select-option *ngFor="let item of types" value="{{item}}">{{item}}</ion-select-option>
+         
+        </ion-select> -->
+        <ngx-select-dropdown  [multiple]="false" [(ngModel)]="title" [config]="config" [options]="types"></ngx-select-dropdown>
+
+      </ion-col>
+      <ion-col size="12">
+        <p class="pp">Ranking</p>
+        <ion-input class="inp"  type="number"  [(ngModel)]="ranking" placeholder="**********************"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="12">
+        <p class="pp">Country Ranking</p>
+        <ion-input class="inp"  type="number"  [(ngModel)]="country_ranking" placeholder="**********************"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <!-- <ion-col size="12">
+      <ion-item>
+        <ion-label>YYYY-MM-DD</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" placeholder="Select Start Date"></ion-datetime>
+      </ion-item>
+    </ion-col> -->
+    <!-- </ion-row> -->
+    <!-- <ion-row class="row2">
+      <ion-col size="12">
+        <p class="pp">Password</p>
+        <ion-input class="inp" placeholder="Password"></ion-input>
+      </ion-col>
+    </ion-row>-->
+
+    <!-- <div class="button_shade"></div> -->
+    <ion-row>
+      <ion-col size="6">
+        <div class="button_start" (click)="addPlayer()">ADD</div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="button_start" (click)="goToRound()">SUBMIT</div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

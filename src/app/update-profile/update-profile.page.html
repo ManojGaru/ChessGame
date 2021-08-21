@@ -1,0 +1,123 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+
+<ion-content scroll="false" class="myview">
+
+  <div>
+
+
+  </div>
+  <ion-grid style="position: absolute;top: 0px;width: 100%;">
+    <ion-row style="top: 15px;">
+
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="6"></ion-col>
+      <ion-col size="2">
+        <ion-icon class="power" name="person-circle-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+
+      <img class="img_txt"
+        [src]="imageShow" (click)="selectImage()">
+
+
+
+    </ion-row>
+    <P class="p_info">PERSONAL INFORMATION</P>
+    <ion-row class="row1">
+      <ion-col size="3"></ion-col>
+      <ion-col size="6">
+        <p class="pp">username</p>
+        <ion-input class="inp" [(ngModel)]="username" placeholder="*************"></ion-input>
+      </ion-col>
+      <ion-col size="3"></ion-col>
+
+      <ion-col size="6">
+        <p class="pp">firstname</p>
+        <ion-input class="inp" [(ngModel)]="first_name" placeholder="*************"></ion-input>
+      </ion-col>
+      <ion-col size="6">
+        <p class="pp">lastname</p>
+        <ion-input class="inp" [(ngModel)]="last_name" placeholder="*************"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="6">
+        <p class="pp">age</p>
+        <ion-input class="inp" [(ngModel)]="age" placeholder="*************"></ion-input>
+      </ion-col>
+      <ion-col size="6">
+        <p class="pp">date of birth</p>
+        <ion-datetime class="inp" [(ngModel)]="dob" displayFormat="YYYY-MM-DD" placeholder="Select DOB"></ion-datetime>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="6">
+        <p class="pp">contact</p>
+        <ion-input class="inp" [(ngModel)]="contact" placeholder="*************"></ion-input>
+      </ion-col>
+      <ion-col size="6">
+         <p class="pp">gender</p>
+          <ion-select [(ngModel)]="gender" placeholder="Select Gender" class="inp">
+            <ion-select-option value="female">Female</ion-select-option>
+            <ion-select-option value="male">Male</ion-select-option>
+          </ion-select>
+       
+      </ion-col>
+    </ion-row>
+    <ion-row class="row1">
+      <!--  <ion-col size="6">
+        <p class="pp">membership</p>
+        <ion-input class="inp" placeholder="*************"></ion-input>
+      </ion-col>
+      <ion-col size="6">
+        <p class="pp">user type</p>
+        <ion-input class="inp" placeholder="*************"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="6">
+        <p class="pp">Email</p>
+        <ion-input class="inp" placeholder="*************"></ion-input>
+      </ion-col>
+      <ion-col size="6">
+        <p class="pp">status</p>
+        <ion-input class="inp" placeholder="*************"></ion-input>
+      </ion-col> -->
+      <ion-col size="3"></ion-col>
+      <ion-col size="6">
+        <p class="pp">bio</p>
+        <ion-input class="inp" [(ngModel)]="bio" placeholder="*************"></ion-input>
+      </ion-col>
+      <ion-col size="3"></ion-col>
+    </ion-row>
+    <!-- <ion-row class="row2">
+      <ion-col size="12">
+        <p class="pp">Password</p>
+        <ion-input class="inp" placeholder="Password"></ion-input>
+      </ion-col>
+    </ion-row>
+  
+    <div class="button_shade"></div> -->
+    <!-- <input type="file" (change)="changeListener($event)" /> -->
+    <div class="button_start" (click)="update()">Add your informartion</div>
+
+  </ion-grid>
+
+</ion-content>

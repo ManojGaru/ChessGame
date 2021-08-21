@@ -1,0 +1,63 @@
+
+
+
+<ion-content  scroll="false" class="myview">
+ 
+  <div
+    >
+   
+  
+  </div>
+  <ion-grid style="position: absolute;top: 0px;width: 100%;">
+    
+    <ion-row style="top: 15px;">
+      
+      <ion-col size="2" style="color: cornsilk;">
+        <ion-menu-button style="color: #ecc023;"></ion-menu-button>
+      
+      </ion-col>
+      <ion-col size="2">
+        <ion-thumbnail>
+          <img class="t-img" src="../../assets/image/logo.png">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="8"></ion-col>
+    </ion-row>
+    <ion-row>
+     
+        <img class="img_txt"  src="../../assets/image/logo_text.png">
+      
+    </ion-row>
+    <ion-row class="row1">
+      <ion-col size="12">
+        <p class="pp">Username Or Emails</p>
+        <ion-input class="inp" placeholder="Username or email" [(ngModel)]="username"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row2">
+      <ion-col size="12">
+        <p class="pp">Password</p>
+        <ion-input class="inp" placeholder="Password" [(ngModel)]="password" type="password"></ion-input>
+      </ion-col>
+      <ion-col size="8">
+        <p class="pp" (click)="resetPassword()">Forgot Password ? </p>
+      </ion-col>
+      <ion-col size="4">
+        <p class="pp" (click)="signUp()"> SignUp </p>
+      </ion-col>
+    </ion-row>
+  
+    <div class="button_shade"></div>
+    <div class="button_start" (click)="signin()">LogIn</div>
+    
+        <p class="ppp">Help | Terms & Privacy | Chess.Live</p>
+      
+  </ion-grid>
+  
+  <!-- <div style="top: 0;z-index: 1000;height: 100vh;">
+    <div style="height: 69vh;">
+      <img src="../../assets/image/logo.png">
+    </div>
+    <img src="../../assets//image/wp3269694.jpg">
+  </div> -->
+</ion-content>
